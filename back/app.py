@@ -43,9 +43,11 @@ def signup():
         name = request.form['name']
         print(users[0])
         for user in users:
-            if user['username'] == username and not user['password'] == password:
+            if user['username'] == username:
                 return render_template('signup.html', errormsg = 'Mail is already registered')
-        users.append({'username':username,'password':password})
+        users.append({'username':username,'password':password,'name':name})
+        with open(users_file, 'w') as file:
+            json.dump(users, file, indent=4)
         return render_template('success.html')
     return render_template('signup.html')
 
