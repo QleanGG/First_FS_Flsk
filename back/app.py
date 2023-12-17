@@ -32,24 +32,32 @@ def about():
 def create_students():
     return render_template('students.html', students = students)
 
-@app.route("/signup" ,methods=['GET','POST'])
+@app.route("/signup", methods=['GET', 'POST'])
 def signup():
     global users
     username = None
     password = None
+    errormsg = None  # Initialize errormsg variable
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         name = request.form['name']
-        print(users[0])
+
         for user in users:
             if user['username'] == username:
-                return render_template('signup.html', errormsg = 'Mail is already registered')
-        users.append({'username':username,'password':password,'name':name})
+                errormsg = 'Mail is already registered'
+                return render_template('signup.html', errormsg=errormsg)
+
+        users.append({'username': username, 'password': password, 'name': name})
+
         with open(users_file, 'w') as file:
             json.dump(users, file, indent=4)
+
         return render_template('success.html')
-    return render_template('signup.html')
+
+    return render_template('signup.html', errormsg=errormsg)
+
 
 
 @app.route("/login" ,methods=['GET','POST'])

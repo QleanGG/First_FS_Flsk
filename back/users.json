@@ -10,7 +10,7 @@
         "name": "Shon"
     },
     {
-        "username": "eyalgold@gmail.com",
+        "username": "ey@gmail.com",
         "password": "waga",
         "name": "Eyal"
     },
@@ -23,10 +23,5 @@
         "username": "mcfuish@gmail.com",
         "password": "12344",
         "name": "Mcfish"
-    },
-    {
-        "username": "chentusik@gmail.com",
-        "password": "12345c",
-        "name": "Chen"
     }
 ]
