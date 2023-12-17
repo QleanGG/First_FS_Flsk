@@ -1,7 +1,7 @@
 import json
 from flask import Flask, render_template, url_for,request,redirect
 
-app = Flask(__name__, static_url_path='/static', static_folder='../static')
+app = Flask(__name__)
 users_file = 'users.json'
 
 try:
@@ -20,7 +20,7 @@ students =[{"name":"Nadav","email":"nadav98@gmail.com"},{"name":"Shon","email":"
 def index():
 
     image_url = url_for('static', filename='pictures/tekken-8.jpg')
-    return render_template('index.html', image_url=image_url)
+    return render_template('index.html', image_url=image_url, style = 'style.css')
 
 @app.route("/aboutme")
 def about():
@@ -65,10 +65,10 @@ def login():
                 image_url = url_for('static', filename='pictures/tekken-8.jpg')
                 return render_template('index.html',user_name = user['name'],image_url=image_url)
             elif user['username'] == username and not user['password'] == password:
-                return render_template('login.html', errormsg = 'password is not correct')
+                return render_template('login.html',filename='login.css', errormsg = 'password is not correct')
         else:
-            return render_template('login.html', errormsg = 'User is not registered')
-    return render_template('login.html')
+            return render_template('login.html',filename='login.css', errormsg = 'User is not registered')
+    return render_template('login.html',filename='login.css')
 
 
 
