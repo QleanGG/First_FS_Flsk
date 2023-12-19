@@ -70,12 +70,9 @@ def login():
         password = request.form['password']
         for user in users:
             if user['username'] == username and user['password'] == password:
-                image_url = url_for('static', filename='pictures/tekken-8.jpg')
-                return render_template('index.html',user_name = user['name'],image_url=image_url)
-            elif user['username'] == username and not user['password'] == password:
-                return render_template('login.html',filename='login.css', errormsg = 'password is not correct')
+                return render_template('index.html',user_name = user['name'])
         else:
-            return render_template('login.html',filename='login.css', errormsg = 'User is not registered')
+            return render_template('login.html',filename='login.css', errormsg = 'User is not registered or Password incorrect')
     return render_template('login.html',filename='login.css')
 
 
