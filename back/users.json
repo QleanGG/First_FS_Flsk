@@ -23,5 +23,30 @@
         "username": "mcfuish@gmail.com",
         "password": "12344",
         "name": "Mcfish"
+    },
+    {
+        "username": "shonbeast@gmail.com",
+        "password": "12345",
+        "name": "Shon"
+    },
+    {
+        "username": "bulbul@gmail.com",
+        "password": "avi12",
+        "name": "Avi Biton"
+    },
+    {
+        "username": "paspas1@gmail.com",
+        "password": "12345",
+        "name": "paspas"
+    },
+    {
+        "username": "niv@gmail.com",
+        "password": "12321",
+        "name": "Niv"
+    },
+    {
+        "username": "nick@gmail.com",
+        "password": "12345",
+        "name": "SpiraNick"
     }
 ]

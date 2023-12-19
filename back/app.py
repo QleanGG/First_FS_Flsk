@@ -22,7 +22,7 @@ def index():
     image_url = url_for('static', filename='pictures/tekken-8.jpg')
     return render_template('index.html', image_url=image_url, style = 'style.css')
 
-@app.route("/aboutme")
+@app.route("/about")
 def about():
 
     image_url = url_for('static', filename='pictures/tekken-8.jpg')
@@ -56,7 +56,7 @@ def signup():
 
         return render_template('success.html')
 
-    return render_template('signup.html', errormsg=errormsg)
+    return render_template('signup.html')
 
 
 

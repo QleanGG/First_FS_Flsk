@@ -1,39 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signup</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
-    <style>
-        body{
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <main class="form-signin w-60 m-auto">
-        <form action="/signup" method="post">
-          <h1 class="h3 mb-3 fw-normal">Register</h1>
-      
-          <div class="form-floating">
-            <input type="email" class="form-control" id="username" name="username" placeholder="name@example.com" required>
-            <label for="floatingInput">Email address</label>
-          </div>
-          <div class="form-floating">
-            <input type="text" id="name" name="name" class="form-control" required>
-            <label for="name">Name</label>
-        </div>        
-          <div class="form-floating">
-            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
-            <label for="floatingPassword">Password</label>
-          </div>       
-          <button class="btn btn-primary w-60 py-2" type="submit">Sign Up</button>
-          <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
-        </form>
-        <p>{{errormsg}}</p>
-      </main>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock %}
+{% block head %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"">
+{% endblock %}
+{%block content%}
+<main class="form-signin w-60 m-auto">
+  <form style="max-width: 330px; margin: auto;" action="/signup" method="post">
+    <h1 class="h3 mb-3 fw-normal">Register</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="username" name="username" placeholder="name@example.com" required>
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" id="name" name="name" class="form-control" required>
+      <label for="name">Name</label>
+  </div>        
+    <div class="form-floating">
+      <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+      <label for="floatingPassword">Password</label>
+    </div>       
+    <button class="btn btn-primary w-60 py-2" type="submit">Sign Up</button>
+  </form>
+  <p id="errormsg">{{errormsg}}</p>
+</main>
+<script>
+const hideMsg = () => {
+  if (errormsg.value == None) {
+    errormsgl.style.display = 'none'
+  }
+}
+addEventListener(onload,hideMsg)
+</script>
+{% endblock %}
+

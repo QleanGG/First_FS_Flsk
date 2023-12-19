@@ -1,4 +1,4 @@
-# First Full Stack app using Flask
+#First Full Stack app using Flask
 
 This is my first project as I explore using data on my very own server with flask
 

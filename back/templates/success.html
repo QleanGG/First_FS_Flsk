@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock %}
+{% block head %}
+    {{super()}}
+{% endblock %}
+{%block content%}
+<div>
     <h1>Sign up succesfull!</h1>
     <a href="/">Back to main menu</a>
-</body>
-</html>
+</div>
+{% endblock %}

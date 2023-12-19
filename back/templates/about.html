@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me</title>
-</head>
-<body>
-    <h1>About me</h1>
-    <p>My company is the top in bla bla and can be bla bla</p>
-
-    <p>Your email is: {{data}}</p>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock %}
+{% block head %}
+    {{super()}}
+{% endblock %}
+{%block content%}
+    <h1>About the Israel FGC</h1>
+    <p>Israel FGC is the top in bla bla and can be bla bla</p>
+{% endblock %}

@@ -3,6 +3,10 @@ body {
     text-align: center;
 }
 
+nav {
+    margin-bottom: 50px;
+}
+
 a {
     border: solid 3px burlywood;
     border-radius: 20px;
